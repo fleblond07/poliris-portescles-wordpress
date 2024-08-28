@@ -1,0 +1,12 @@
+{
+    "name": {
+        "url": "111-firstname-lastname-postalcode-city-country", // Only the last part of the URL
+        "name": "short_three_letter_name",
+        "location": "ftp_location_hash" // Example : e7bc11391f2e1cb626140d02df1eea9d - Check README for more information
+    },
+    "name2": {
+        "url": "",
+        "name": "",
+        "location": ""
+    }
+}
