@@ -1,0 +1,23 @@
+{
+  "name": "poliris-portescles-wordpress",
+  "version": "1.0.0",
+  "description": "Poliris to Wordpress compatible file migration",
+  "main": "main.py",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fleblond07/poliris-portescles-wordpress.git"
+  },
+  "keywords": [
+    "poliris",
+    "portescles"
+  ],
+  "author": "FLB",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fleblond07/poliris-portescles-wordpress/issues"
+  },
+  "homepage": "https://github.com/fleblond07/poliris-portescles-wordpress#readme",
+  "dependencies": {
+    "cypress": "^13.13.3"
+  }
+}
