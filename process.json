@@ -1,0 +1,23 @@
+{
+    "32": {
+        "128": "Radiator",
+        "256": "Floor",
+        "512": "Gas",
+        "1024": "Fuel",
+        "2048": "Electric",
+        "4096": "Collective",
+        "8192": "Individual",
+        "16384": "Reversible air conditioning"
+    },
+    "33": {
+        "1": "None",
+        "2": "Open-plan",
+        "3": "Separate",
+        "4": "Industrial",
+        "5": "Kitchenette",
+        "6": "Equipped open-plan",
+        "7": "Equipped separate",
+        "8": "Equipped kitchenette",
+        "9": "Equipped"
+    }
+}

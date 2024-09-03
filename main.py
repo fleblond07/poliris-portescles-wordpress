@@ -24,24 +24,11 @@ def replace_separator(file_name, initial_separator, new_separator):
 def manipulate_file(filename):
     try:
         df = pd.read_csv(f'{filename}', sep=';' , on_bad_lines='skip', dtype=str, header=None)
-        df.iloc[:,32] = df.iloc[:,32].replace("128", 'Radiator')
-        df.iloc[:,32] = df.iloc[:,32].replace("256", 'Floor')
-        df.iloc[:,32] = df.iloc[:,32].replace("512", 'Gas')
-        df.iloc[:,32] = df.iloc[:,32].replace("1024", 'Fuel')
-        df.iloc[:,32] = df.iloc[:,32].replace("2048", 'Electric')
-        df.iloc[:,32] = df.iloc[:,32].replace("4096", 'Collective')
-        df.iloc[:,32] = df.iloc[:,32].replace("8192", 'Individual')
-        df.iloc[:,32] = df.iloc[:,32].replace("16384", 'Reversible air conditioning')
-
-        df.iloc[:,33] = df.iloc[:,33].replace("1", 'None')
-        df.iloc[:,33] = df.iloc[:,33].replace("2", 'Open-plan')
-        df.iloc[:,33] = df.iloc[:,33].replace("3", 'Separate')
-        df.iloc[:,33] = df.iloc[:,33].replace("4", 'Industrial')
-        df.iloc[:,33] = df.iloc[:,33].replace("5", 'Kitchenette')
-        df.iloc[:,33] = df.iloc[:,33].replace("6", 'Equipped open-plan')
-        df.iloc[:,33] = df.iloc[:,33].replace("7", 'Equipped separate')
-        df.iloc[:,33] = df.iloc[:,33].replace("8", 'Equipped kitchenette')
-        df.iloc[:,33] = df.iloc[:,33].replace("9", 'Equipped')
+        config = open('process.json', 'r')
+        steps = json.load(config)
+        for column_index, sub_dict in steps.items():
+            for value_in_dict, value_to_replace in sub_dict.items():
+                df.iloc[:,int(column_index)] = df.iloc[:,int(column_index)].replace(value_in_dict, value_to_replace)
         df.to_csv(f'{filename}', sep=';', header=None)
     except EmptyDataError:
         print(f'{filename} is empty')
