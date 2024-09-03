@@ -2,3 +2,5 @@ secrets/secrets.json
 link_list.json
 node_modules/*
 cypress/fixtures/secrets.json
+*.csv
+*.zip
